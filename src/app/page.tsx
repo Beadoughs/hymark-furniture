@@ -8,6 +8,8 @@ import { Reviews } from "@/components/sections/reviews";
 import { Gallery } from "@/components/sections/gallery";
 import { Newsletter } from "@/components/sections/newsletter";
 
+export const revalidate = 60;
+
 export default function HomePage() {
   return (
     <>

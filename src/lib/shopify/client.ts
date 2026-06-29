@@ -1,5 +1,24 @@
 import { createStorefrontApiClient } from "@shopify/storefront-api-client";
 import { getShopifyConfig, isShopifyConfigured } from "@/lib/shopify/config";
+import { logShopifyWarning } from "@/lib/shopify/debug";
+
+function formatShopifyErrors(errors: unknown): string {
+  if (Array.isArray(errors)) {
+    return errors
+      .map((error) =>
+        typeof error === "object" && error !== null && "message" in error
+          ? String((error as { message?: string }).message)
+          : String(error)
+      )
+      .join("; ");
+  }
+
+  if (typeof errors === "object" && errors !== null && "message" in errors) {
+    return String((errors as { message?: string }).message);
+  }
+
+  return "Shopify Storefront API request failed";
+}
 
 export function getShopifyClient() {
   const { storeDomain, publicAccessToken, apiVersion } = getShopifyConfig();
@@ -25,10 +44,8 @@ export async function shopifyFetch<T>(
   });
 
   if (errors) {
-    const message =
-      typeof errors === "object" && errors !== null && "message" in errors
-        ? String((errors as { message?: string }).message)
-        : "Shopify Storefront API request failed";
+    const message = formatShopifyErrors(errors);
+    logShopifyWarning("shopifyFetch", message);
     throw new Error(message);
   }
 

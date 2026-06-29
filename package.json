@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test:shopify": "node scripts/test-shopify.mjs"
   },
   "dependencies": {
     "@shopify/storefront-api-client": "^1.0.10",

@@ -16,6 +16,8 @@ type CollectionViewProps = {
   heroTitle?: string;
   heroDescription?: string;
   heroImage?: string;
+  dataSource?: "shopify" | "mock";
+  shopifyConnected?: boolean;
 };
 
 export function CollectionView({
@@ -24,6 +26,8 @@ export function CollectionView({
   heroTitle,
   heroDescription,
   heroImage,
+  dataSource = "mock",
+  shopifyConnected = false,
 }: CollectionViewProps) {
   const [quickViewProduct, setQuickViewProduct] = useState<Product | null>(null);
   const [dialogOpen, setDialogOpen] = useState(false);
@@ -106,6 +110,25 @@ export function CollectionView({
                 }}
               />
             ))}
+          </div>
+        ) : shopifyConnected && dataSource === "shopify" ? (
+          <div className="rounded-md border border-border bg-secondary/30 p-8 text-center">
+            <h3 className="font-serif text-2xl text-brand-charcoal">
+              No products in this collection
+            </h3>
+            <p className="mx-auto mt-3 max-w-xl text-brand-graphite">
+              This collection is connected to Shopify but has no published products
+              yet. Check that products are assigned to the &ldquo;{collection.slug}
+              &rdquo; collection and published to your Storefront sales channel.
+            </p>
+            <div className="mt-6 flex justify-center gap-3">
+              <Button variant="brand" asChild>
+                <Link href="/showroom">Visit Showroom</Link>
+              </Button>
+              <Button variant="outline" asChild>
+                <Link href="/contact">Contact Team</Link>
+              </Button>
+            </div>
           </div>
         ) : (
           <div className="rounded-md border border-border bg-secondary/30 p-8 text-center">

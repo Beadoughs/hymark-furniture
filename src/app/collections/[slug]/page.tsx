@@ -4,6 +4,8 @@ import { COLLECTIONS } from "@/lib/collections";
 import { getCollectionPageData } from "@/lib/products";
 import { CollectionView } from "@/components/pages/collection-view";
 
+export const revalidate = 60;
+
 type CollectionRouteProps = {
   params: Promise<{ slug: string }>;
 };
@@ -44,7 +46,7 @@ export default async function CollectionPage({ params }: CollectionRouteProps) {
     notFound();
   }
 
-  const { collection, products, heroTitle, heroDescription, heroImage } =
+  const { collection, products, heroTitle, heroDescription, heroImage, dataSource, shopifyConnected } =
     pageData;
 
   return (
@@ -54,6 +56,8 @@ export default async function CollectionPage({ params }: CollectionRouteProps) {
       heroTitle={heroTitle}
       heroDescription={heroDescription}
       heroImage={heroImage}
+      dataSource={dataSource}
+      shopifyConnected={shopifyConnected}
     />
   );
 }

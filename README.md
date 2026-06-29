@@ -68,6 +68,30 @@ Optional: a `best-sellers` collection powers the homepage best sellers section; 
 
 Product tags `best-seller`, `new`, and `sale` map to card badges.
 
+## Troubleshooting Shopify collections
+
+### Collections show demo products instead of your catalog
+
+1. **Environment variables** — Copy `.env.example` to `.env.local` and set `SHOPIFY_STORE_DOMAIN` and `SHOPIFY_STOREFRONT_ACCESS_TOKEN`. Restart the dev server after changes.
+2. **Rebuild after adding env vars** — Collection pages use ISR (`revalidate: 60`). Run `npm run build` again when deploying so production picks up credentials.
+3. **Test the connection** — Run `npm run test:shopify`. It reports per-collection product counts without printing tokens.
+
+### Collections are empty when Shopify is connected
+
+The site shows **“No products in this collection”** when Shopify is configured but a collection returns zero products (demo mock data is not used in that case).
+
+| Check | What to do in Shopify Admin |
+| ----- | ----------------------------- |
+| **Collection handles** | Create collections with handles exactly: `living`, `dining`, `bedroom`, `outdoor`, `clearance` (URL slug = handle). |
+| **Products in collection** | Open each collection → **Products** → add the relevant items. |
+| **Sales channel publication** | Products must be published to the channel tied to your Storefront token (usually **Online Store** or a **Headless** custom app channel). In the product editor: **Product availability** → enable the correct channel. Bulk: **Products** → select items → **Bulk edit** → **Columns** → **Published on…** |
+| **Storefront API scopes** | Custom app needs `unauthenticated_read_product_listings` (and related cart scopes for checkout). |
+| **API version** | Match `SHOPIFY_STOREFRONT_API_VERSION` to a supported release (default `2025-01`). |
+
+### Dev logging
+
+In development (`npm run dev`), the server console logs `[hymark:shopify]` or `[hymark:mock]` when loading collections and best sellers. Warnings such as missing collection handles appear as `[shopify]`.
+
 ## Scripts
 
 | Command         | Description              |
@@ -76,6 +100,7 @@ Product tags `best-seller`, `new`, and `sale` map to card badges.
 | `npm run build` | Production build         |
 | `npm run start` | Start production server  |
 | `npm run lint`  | Run ESLint               |
+| `npm run test:shopify` | Test Storefront API connection (reads `.env.local`) |
 
 ## Brand Colors
 

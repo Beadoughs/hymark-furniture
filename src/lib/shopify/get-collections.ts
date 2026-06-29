@@ -1,4 +1,5 @@
 import { shopifyFetch } from "@/lib/shopify/client";
+import { logShopifyWarning } from "@/lib/shopify/debug";
 import { mapShopifyProducts } from "@/lib/shopify/mappers";
 import { GET_COLLECTION_BY_HANDLE_QUERY } from "@/lib/shopify/queries";
 import type { ShopifyCollection } from "@/lib/shopify/types";
@@ -27,6 +28,10 @@ export async function getShopifyCollectionByHandle(
   const collection = data.collection;
 
   if (!collection) {
+    logShopifyWarning(
+      `collection "${handle}"`,
+      "not found — check the collection handle in Shopify Admin matches the site slug"
+    );
     return { products: [] };
   }
 
