@@ -1,8 +1,11 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import { FadeIn } from "@/components/motion/fade-in";
 import { SectionHeading } from "@/components/ui/section-heading";
+import { Button } from "@/components/ui/button";
 
 export function AboutSection() {
   return (
@@ -25,26 +28,27 @@ export function AboutSection() {
             <SectionHeading
               align="left"
               eyebrow="Our Story"
-              title="A Tasmanian Family Tradition"
-              description=""
+              title="More Than a Century of Craft"
+              description="Established in 1907 and guided by four generations of the Hill family — a Tasmanian furniture tradition built on quality, value and genuine care."
             />
             <div className="space-y-4 text-base leading-relaxed text-brand-graphite/95">
               <p>
-                Hymark Furniture began as a small family business with a simple
-                belief: every Tasmanian home deserves furniture that&apos;s built
-                to last, fairly priced, and sold by people who genuinely care.
+                From a major fire in 1922 to floods, rebranding and evolving
+                business practices, Hymark has adapted through every challenge
+                while never compromising on the standards our customers expect.
               </p>
               <p>
-                For generations, we&apos;ve built relationships — not just
-                transactions. We know our customers by name, we understand the
-                unique character of Tasmanian homes, and we take pride in helping
-                families find pieces they&apos;ll love for years to come.
-              </p>
-              <p>
-                From our showroom floor to your living room, quality and trust
-                guide everything we do. That&apos;s the Hymark promise.
+                Today, Cooper Hill carries the family dedication forward —
+                continuing a legacy that began when his great-grandfather Jack
+                started at just 16 years old.
               </p>
             </div>
+            <Button variant="outline" className="mt-8" asChild>
+              <Link href="/about">
+                Read our full story
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </Button>
           </FadeIn>
         </div>
       </div>

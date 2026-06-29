@@ -1,17 +1,17 @@
 import type { Metadata } from "next";
-import { AboutSection } from "@/components/sections/about-section";
+import { OurStory } from "@/components/pages/our-story";
 import { WhyChoose } from "@/components/sections/why-choose";
 
 export const metadata: Metadata = {
-  title: "About Us",
+  title: "Our Story",
   description:
-    "Learn about Hymark Furniture, Tasmania's trusted family-owned furniture destination and our commitment to quality service.",
+    "Discover the Hymark Furniture heritage — established in 1907 and guided by four generations of the Hill family, with a lasting commitment to quality and service.",
 };
 
 export default function AboutPage() {
   return (
     <>
-      <AboutSection />
+      <OurStory />
       <WhyChoose />
     </>
   );
