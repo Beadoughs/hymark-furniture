@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { type Product } from "@/lib/data";
 import { formatPrice } from "@/lib/utils";
 import { AddToCartButton } from "@/components/cart/add-to-cart-button";
@@ -79,9 +80,15 @@ export function QuickViewDialog({
                   Enquire In Store
                 </Button>
               )}
-              <Button variant="outline" className="flex-1" asChild>
-                <a href="/showroom">Visit Showroom</a>
-              </Button>
+              {product.handle ? (
+                <Button variant="outline" className="flex-1" asChild>
+                  <Link href={`/products/${product.handle}`}>View Details</Link>
+                </Button>
+              ) : (
+                <Button variant="outline" className="flex-1" asChild>
+                  <Link href="/showroom">Visit Showroom</Link>
+                </Button>
+              )}
             </div>
           </div>
         </div>

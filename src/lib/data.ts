@@ -70,6 +70,7 @@ export type Product = {
   price: number;
   salePrice?: number;
   image: string;
+  images?: string[];
   description: string;
   badge?: string;
 };

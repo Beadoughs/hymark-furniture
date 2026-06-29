@@ -6,7 +6,23 @@ function parseAmount(amount: string): number {
 }
 
 function getPrimaryVariant(product: ShopifyProduct) {
-  return product.variants.edges[0]?.node;
+  const variants = product.variants.edges.map((edge) => edge.node);
+  return (
+    variants.find((variant) => variant.availableForSale) ?? variants[0]
+  );
+}
+
+function getProductImages(product: ShopifyProduct, fallback: string): string[] {
+  const fromGallery =
+    product.images?.edges
+      .map((edge) => edge.node.url)
+      .filter((url): url is string => Boolean(url)) ?? [];
+
+  if (fromGallery.length > 0) {
+    return fromGallery;
+  }
+
+  return [fallback];
 }
 
 export function mapShopifyProductToProduct(product: ShopifyProduct): Product {
@@ -42,12 +58,13 @@ export function mapShopifyProductToProduct(product: ShopifyProduct): Product {
     id: product.id,
     handle: product.handle,
     variantId: variant?.id,
-    availableForSale: variant?.availableForSale ?? true,
+    availableForSale: variant?.availableForSale ?? false,
     title: product.title,
     category: product.productType || "Furniture",
     price: regularPrice,
     salePrice,
     image,
+    images: getProductImages(product, image),
     description: product.description || "",
     badge,
     source: "shopify",

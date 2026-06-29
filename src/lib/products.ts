@@ -15,6 +15,7 @@ import {
   getShopifyProducts,
   getShopifySaleProducts,
 } from "@/lib/shopify/get-products";
+import { getShopifyProductByHandle } from "@/lib/shopify/get-product";
 
 export type CollectionPageData = {
   collection: CollectionConfig;
@@ -165,4 +166,31 @@ export async function getCollectionProductCount(
 ): Promise<number> {
   const pageData = await getCollectionPageData(slug);
   return pageData?.products.length ?? 0;
+}
+
+export async function getProductPageData(
+  handle: string
+): Promise<{ product: Product; shopifyConnected: boolean } | null> {
+  if (isShopifyConfigured()) {
+    try {
+      const product = await getShopifyProductByHandle(handle);
+      if (product) {
+        return { product, shopifyConnected: true };
+      }
+      return null;
+    } catch (error) {
+      console.error(`[shopify] Failed to load product "${handle}":`, error);
+      return null;
+    }
+  }
+
+  const mockProduct = PRODUCTS.find(
+    (product) => product.handle === handle || product.id === handle
+  );
+
+  if (!mockProduct) {
+    return null;
+  }
+
+  return { product: mockProduct, shopifyConnected: false };
 }

@@ -34,6 +34,9 @@ export type ShopifyProduct = {
   variants: {
     edges: Array<{ node: ShopifyProductVariant }>;
   };
+  images?: {
+    edges: Array<{ node: ShopifyImage }>;
+  };
 };
 
 export type ShopifyCollection = {

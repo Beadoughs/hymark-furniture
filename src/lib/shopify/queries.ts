@@ -22,7 +22,7 @@ const PRODUCT_FRAGMENT = `
         currencyCode
       }
     }
-    variants(first: 1) {
+    variants(first: 25) {
       edges {
         node {
           id
@@ -43,6 +43,14 @@ const PRODUCT_FRAGMENT = `
         }
       }
     }
+    images(first: 10) {
+      edges {
+        node {
+          url
+          altText
+        }
+      }
+    }
   }
 `;
 
@@ -55,6 +63,15 @@ export const GET_PRODUCTS_QUERY = `
           ...ProductFields
         }
       }
+    }
+  }
+`;
+
+export const GET_PRODUCT_BY_HANDLE_QUERY = `
+  ${PRODUCT_FRAGMENT}
+  query GetProductByHandle($handle: String!) {
+    product(handle: $handle) {
+      ...ProductFields
     }
   }
 `;
