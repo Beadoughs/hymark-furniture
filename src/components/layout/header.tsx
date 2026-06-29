@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Menu } from "lucide-react";
 import { NAV_LINKS } from "@/lib/data";
 import { cn } from "@/lib/utils";
+import { CartButton } from "@/components/cart/cart-button";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -62,6 +63,8 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-2">
+          <CartButton className="hidden sm:inline-flex" />
+
           <Button
             variant="brand"
             size="default"
@@ -99,6 +102,7 @@ export function Header() {
                     {link.label}
                   </Link>
                 ))}
+                <CartButton className="sm:hidden" />
                 <Button variant="brand" size="lg" className="mt-6 w-full" asChild>
                   <Link href="/showroom" onClick={() => setOpen(false)}>
                     Visit Showroom

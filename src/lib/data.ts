@@ -61,6 +61,10 @@ export const CATEGORIES = [
 
 export type Product = {
   id: string;
+  handle?: string;
+  variantId?: string;
+  availableForSale?: boolean;
+  source?: "mock" | "shopify";
   title: string;
   category: string;
   price: number;

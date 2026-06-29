@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { type Product } from "@/lib/data";
 import { formatPrice } from "@/lib/utils";
+import { AddToCartButton } from "@/components/cart/add-to-cart-button";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -67,9 +68,17 @@ export function QuickViewDialog({
               )}
             </div>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Button variant="brand" className="flex-1">
-                Enquire In Store
-              </Button>
+              {product.variantId ? (
+                <AddToCartButton
+                  variantId={product.variantId}
+                  availableForSale={product.availableForSale}
+                  className="flex-1"
+                />
+              ) : (
+                <Button variant="brand" className="flex-1">
+                  Enquire In Store
+                </Button>
+              )}
               <Button variant="outline" className="flex-1" asChild>
                 <a href="/showroom">Visit Showroom</a>
               </Button>

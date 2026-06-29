@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Playfair_Display } from "next/font/google";
+import { CartProvider } from "@/components/cart/cart-provider";
+import { CartDrawer } from "@/components/cart/cart-drawer";
 import { AnnouncementBar } from "@/components/layout/announcement-bar";
 import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
@@ -147,10 +149,13 @@ export default function RootLayout({
         className={`${geistSans.variable} ${playfair.variable} font-sans antialiased`}
       >
         <AnnouncementBar />
-        <Header />
-        <main className="pb-16 md:pb-0">{children}</main>
-        <Footer />
-        <MobileCta />
+        <CartProvider>
+          <Header />
+          <main className="pb-16 md:pb-0">{children}</main>
+          <Footer />
+          <MobileCta />
+          <CartDrawer />
+        </CartProvider>
       </body>
     </html>
   );

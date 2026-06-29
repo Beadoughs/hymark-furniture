@@ -4,14 +4,20 @@ import Image from "next/image";
 import { Eye } from "lucide-react";
 import { type Product } from "@/lib/data";
 import { formatPrice } from "@/lib/utils";
+import { AddToCartButton } from "@/components/cart/add-to-cart-button";
 import { Button } from "@/components/ui/button";
 
 type ProductCardProps = {
   product: Product;
   onQuickView: (product: Product) => void;
+  showAddToCart?: boolean;
 };
 
-export function ProductCard({ product, onQuickView }: ProductCardProps) {
+export function ProductCard({
+  product,
+  onQuickView,
+  showAddToCart = true,
+}: ProductCardProps) {
   return (
     <article className="group">
       <div className="relative aspect-[4/5] overflow-hidden rounded-md bg-secondary/70">
@@ -27,7 +33,7 @@ export function ProductCard({ product, onQuickView }: ProductCardProps) {
             {product.badge}
           </span>
         )}
-        <div className="absolute right-3 top-3 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+        <div className="absolute right-3 top-3 flex flex-col gap-2 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
           <Button
             variant="secondary"
             size="sm"
@@ -39,15 +45,25 @@ export function ProductCard({ product, onQuickView }: ProductCardProps) {
             Quick View
           </Button>
         </div>
-        <div className="absolute inset-x-0 bottom-0 translate-y-full p-3 transition-transform duration-200 group-hover:translate-y-0 md:hidden">
-          <Button
-            variant="charcoal"
-            className="w-full"
-            onClick={() => onQuickView(product)}
-          >
-            Quick View
-          </Button>
-        </div>
+        {showAddToCart && product.variantId ? (
+          <div className="absolute inset-x-0 bottom-0 translate-y-full p-3 transition-transform duration-200 group-hover:translate-y-0">
+            <AddToCartButton
+              variantId={product.variantId}
+              availableForSale={product.availableForSale}
+              size="sm"
+            />
+          </div>
+        ) : (
+          <div className="absolute inset-x-0 bottom-0 translate-y-full p-3 transition-transform duration-200 group-hover:translate-y-0 md:hidden">
+            <Button
+              variant="charcoal"
+              className="w-full"
+              onClick={() => onQuickView(product)}
+            >
+              Quick View
+            </Button>
+          </div>
+        )}
       </div>
       <div className="mt-4">
         <p className="text-xs font-medium uppercase tracking-wider text-brand-graphite">
@@ -72,6 +88,15 @@ export function ProductCard({ product, onQuickView }: ProductCardProps) {
             </span>
           )}
         </div>
+        {showAddToCart && product.variantId ? (
+          <div className="mt-3 md:hidden">
+            <AddToCartButton
+              variantId={product.variantId}
+              availableForSale={product.availableForSale}
+              size="sm"
+            />
+          </div>
+        ) : null}
       </div>
     </article>
   );

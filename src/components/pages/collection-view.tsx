@@ -13,9 +13,18 @@ import { Button } from "@/components/ui/button";
 type CollectionViewProps = {
   collection: CollectionConfig;
   products: Product[];
+  heroTitle?: string;
+  heroDescription?: string;
+  heroImage?: string;
 };
 
-export function CollectionView({ collection, products }: CollectionViewProps) {
+export function CollectionView({
+  collection,
+  products,
+  heroTitle,
+  heroDescription,
+  heroImage,
+}: CollectionViewProps) {
   const [quickViewProduct, setQuickViewProduct] = useState<Product | null>(null);
   const [dialogOpen, setDialogOpen] = useState(false);
 
@@ -33,8 +42,8 @@ export function CollectionView({ collection, products }: CollectionViewProps) {
       <div className="relative isolate overflow-hidden border-b border-border">
         <div className="absolute inset-0">
           <Image
-            src={collection.heroImage}
-            alt={collection.heroTitle}
+            src={heroImage ?? collection.heroImage}
+            alt={heroTitle ?? collection.heroTitle}
             fill
             className="object-cover"
             priority
@@ -47,10 +56,10 @@ export function CollectionView({ collection, products }: CollectionViewProps) {
             Hymark Collections
           </p>
           <h1 className="mt-4 max-w-2xl font-serif text-4xl text-white md:text-5xl">
-            {collection.heroTitle}
+            {heroTitle ?? collection.heroTitle}
           </h1>
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/88 md:text-lg">
-            {collection.heroDescription}
+            {heroDescription ?? collection.heroDescription}
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <span className="rounded-full border border-white/35 px-4 py-1.5 text-sm font-medium text-white/95">
