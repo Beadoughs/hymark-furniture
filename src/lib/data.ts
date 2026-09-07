@@ -208,65 +208,6 @@ export const REVIEWS = [
   },
 ] as const;
 
-export const GALLERY_IMAGES = [
-  {
-    id: "g1",
-    category: "living",
-    src: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=600&q=80",
-    alt: "Modern living room with premium lounge",
-    height: "tall" as const,
-  },
-  {
-    id: "g2",
-    category: "dining",
-    src: "https://images.unsplash.com/photo-1617806118233-18e1de247200?w=600&q=80",
-    alt: "Elegant dining room setting",
-    height: "medium" as const,
-  },
-  {
-    id: "g3",
-    category: "lounges",
-    src: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80",
-    alt: "Contemporary lounge styling",
-    height: "medium" as const,
-  },
-  {
-    id: "g4",
-    category: "living",
-    src: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80",
-    alt: "Bright living space",
-    height: "tall" as const,
-  },
-  {
-    id: "g5",
-    category: "lounges",
-    src: "https://images.unsplash.com/photo-1493663284031-b7e3aefcae83?w=600&q=80",
-    alt: "Modular lounge arrangement",
-    height: "medium" as const,
-  },
-  {
-    id: "g6",
-    category: "dining",
-    src: "https://images.unsplash.com/photo-1618221197160-bc32a4bffa15?w=600&q=80",
-    alt: "Warm dining space",
-    height: "tall" as const,
-  },
-  {
-    id: "g7",
-    category: "living",
-    src: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=600&q=80",
-    alt: "Living room detail",
-    height: "medium" as const,
-  },
-  {
-    id: "g8",
-    category: "lounges",
-    src: "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=600&q=80",
-    alt: "Relaxed lounge seating",
-    height: "medium" as const,
-  },
-] as const;
-
 export const SHOWROOM = {
   address: "123 Example Street, Hobart TAS 7000",
   addressNote: "(Example address for demonstration)",

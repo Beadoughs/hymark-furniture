@@ -5,7 +5,6 @@ import { WhyChoose } from "@/components/sections/why-choose";
 import { AboutSection } from "@/components/sections/about-section";
 import { Showroom } from "@/components/sections/showroom";
 import { Reviews } from "@/components/sections/reviews";
-import { Gallery } from "@/components/sections/gallery";
 import { Newsletter } from "@/components/sections/newsletter";
 
 export const revalidate = 60;
@@ -20,7 +19,6 @@ export default function HomePage() {
       <AboutSection />
       <Showroom />
       <Reviews />
-      <Gallery />
       <Newsletter />
     </>
   );
