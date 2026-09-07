@@ -14,6 +14,7 @@ const FOOTER_LINKS = {
     { label: "Finance Options", href: "/contact" },
     { label: "Care & Maintenance", href: "/about" },
     { label: "Warranty", href: "/warranty" },
+    { label: "Care", href: "/care" },
   ],
 };
 
