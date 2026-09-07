@@ -11,7 +11,7 @@ const FOOTER_LINKS = {
   ],
   care: [
     { label: "Delivery Information", href: "/showroom" },
-    { label: "Finance Options", href: "/contact" },
+    { label: "Finance Options", href: "/finance" },
     { label: "Care & Maintenance", href: "/about" },
     { label: "Warranty", href: "/warranty" },
     { label: "Care", href: "/care" },
