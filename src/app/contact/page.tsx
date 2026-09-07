@@ -38,7 +38,7 @@ export default function ContactPage() {
                   Monday to Sunday during showroom opening hours.
                 </p>
                 <Button variant="brand" className="mt-5 w-full sm:w-auto" asChild>
-                  <a href={`tel:${SHOWROOM.phone.replace(/\s/g, "")}`}>
+                  <a href={`tel:${SHOWROOM.phoneTel}`}>
                     <Phone className="h-4 w-4" />
                     {SHOWROOM.phone}
                   </a>

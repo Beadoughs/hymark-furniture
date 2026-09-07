@@ -67,9 +67,6 @@ export function Showroom() {
                       <p className="mt-1 text-sm text-brand-graphite">
                         {SHOWROOM.address}
                       </p>
-                      <p className="mt-1 text-xs text-brand-silver">
-                        {SHOWROOM.addressNote}
-                      </p>
                     </div>
                   </div>
                 </CardContent>
@@ -108,7 +105,7 @@ export function Showroom() {
 
               <div className="overflow-hidden rounded-md border border-border">
                 <iframe
-                  title="Hymark Furniture location map (example)"
+                  title="Hymark Furniture showroom location map"
                   src={SHOWROOM.mapEmbed}
                   className="h-56 w-full border-0 md:h-64"
                   loading="lazy"

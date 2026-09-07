@@ -209,15 +209,15 @@ export const REVIEWS = [
 ] as const;
 
 export const SHOWROOM = {
-  address: "123 Example Street, Hobart TAS 7000",
-  addressNote: "(Example address for demonstration)",
-  phone: "(03) 6234 5678",
-  email: "hello@hymarkfurniture.com.au",
+  address: "40 – 56 Lindsay St, Launceston TAS 7250",
+  phone: "(03) 6331 7377",
+  phoneTel: "+61363317377",
+  email: "simon@hymarkfurniture.com.au",
   hours: [
     { day: "Monday – Friday", time: "9:00am – 5:30pm" },
     { day: "Saturday", time: "9:00am – 4:00pm" },
     { day: "Sunday", time: "10:00am – 4:00pm" },
   ],
   mapEmbed:
-    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27271.0!2d147.3257!3d-42.8821!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDLCsDUyJzU1LjYiUyAxNDfCsDE5JzMyLjUiRQ!5e0!3m2!1sen!2sau!4v1",
+    "https://maps.google.com/maps?q=40%E2%80%9356%20Lindsay%20St%2C%20Launceston%20TAS%207250&z=15&output=embed",
 };

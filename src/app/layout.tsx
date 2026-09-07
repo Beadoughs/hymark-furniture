@@ -83,20 +83,20 @@ const localBusinessJsonLd = {
   description:
     "Family-owned premium furniture retailer serving Tasmania with living, dining and lounge furniture.",
   url: siteUrl,
-  telephone: SHOWROOM.phone,
+  telephone: SHOWROOM.phoneTel,
   email: SHOWROOM.email,
   address: {
     "@type": "PostalAddress",
-    streetAddress: "123 Example Street",
-    addressLocality: "Hobart",
+    streetAddress: "40 – 56 Lindsay St",
+    addressLocality: "Launceston",
     addressRegion: "TAS",
-    postalCode: "7000",
+    postalCode: "7250",
     addressCountry: "AU",
   },
   geo: {
     "@type": "GeoCoordinates",
-    latitude: -42.8821,
-    longitude: 147.3272,
+    latitude: -41.4408,
+    longitude: 147.1395,
   },
   areaServed: {
     "@type": "State",
@@ -127,7 +127,6 @@ const localBusinessJsonLd = {
     "https://www.facebook.com/hymarkfurniture",
     "https://www.instagram.com/hymarkfurniture",
   ],
-  note: "Example address and coordinates for demonstration purposes only.",
 };
 
 export default function RootLayout({

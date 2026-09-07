@@ -9,7 +9,7 @@ export function MobileCta() {
     <div className="fixed bottom-0 left-0 right-0 z-50 border-t border-border bg-white/95 backdrop-blur-sm md:hidden">
       <div className="grid grid-cols-3 divide-x divide-border">
         <a
-          href={`tel:${SHOWROOM.phone.replace(/\s/g, "")}`}
+          href={`tel:${SHOWROOM.phoneTel}`}
           className="flex flex-col items-center gap-1 py-3 text-brand-graphite transition-colors active:bg-secondary"
         >
           <Phone className="h-5 w-5 text-brand-orange" />
