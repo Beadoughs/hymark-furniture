@@ -7,7 +7,7 @@ const FOOTER_LINKS = {
   shop: [
     { label: "Living", href: "/collections/living" },
     { label: "Dining", href: "/collections/dining" },
-    { label: "Lounge", href: "/collections/lounge" },
+    { label: "Lounges", href: "/collections/lounges" },
   ],
   care: [
     { label: "Delivery Information", href: "/showroom" },

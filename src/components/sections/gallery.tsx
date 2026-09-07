@@ -12,7 +12,7 @@ const FILTERS = [
   { id: "all", label: "All" },
   { id: "living", label: "Living" },
   { id: "dining", label: "Dining" },
-  { id: "lounge", label: "Lounge" },
+  { id: "lounges", label: "Lounges" },
 ] as const;
 
 export function Gallery() {

@@ -1,7 +1,7 @@
 import { PRODUCTS, type Product } from "@/lib/data";
 
 export type CollectionConfig = {
-  slug: "living" | "dining" | "lounge";
+  slug: "living" | "dining" | "lounges";
   label: string;
   heroTitle: string;
   heroDescription: string;
@@ -31,9 +31,9 @@ export const COLLECTIONS: CollectionConfig[] = [
     categoryFilters: ["Dining"],
   },
   {
-    slug: "lounge",
-    label: "Lounge",
-    heroTitle: "Lounge Collections",
+    slug: "lounges",
+    label: "Lounges",
+    heroTitle: "Lounges Collections",
     heroDescription:
       "Statement lounges and modular seating curated for comfort, quality and everyday Tasmanian homes.",
     heroImage:
