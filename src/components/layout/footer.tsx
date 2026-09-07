@@ -15,6 +15,8 @@ const FOOTER_LINKS = {
     { label: "Care & Maintenance", href: "/about" },
     { label: "Warranty", href: "/warranty" },
     { label: "Care", href: "/care" },
+    { label: "Privacy Policy", href: "/privacy" },
+    { label: "Disclaimer", href: "/disclaimer" },
   ],
 };
 
@@ -116,7 +118,7 @@ export function Footer() {
             <ul className="space-y-4 text-sm text-brand-graphite">
               <li>
                 <a
-                  href={`tel:${SHOWROOM.phone.replace(/\s/g, "")}`}
+                  href={`tel:${SHOWROOM.phoneTel}`}
                   className="inline-flex items-center gap-2 transition-colors hover:text-brand-charcoal"
                 >
                   <Phone className="h-4 w-4 text-brand-charcoal" />
@@ -132,13 +134,7 @@ export function Footer() {
                   {SHOWROOM.email}
                 </a>
               </li>
-              <li className="leading-relaxed">
-                {SHOWROOM.address}
-                <br />
-                <span className="text-xs text-brand-silver">
-                  {SHOWROOM.addressNote}
-                </span>
-              </li>
+              <li className="leading-relaxed">{SHOWROOM.address}</li>
             </ul>
           </div>
         </div>
