@@ -181,30 +181,27 @@ export const WHY_CHOOSE = [
 export const REVIEWS = [
   {
     id: "1",
-    name: "Sarah & James M.",
-    location: "Hobart, TAS",
+    name: "Dale Leggoe",
     rating: 5,
-    text: "We furnished our entire living and dining area with Hymark. The team were patient, knowledgeable, and delivery was seamless. Our lounge still looks incredible two years on.",
-    image:
-      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&q=80",
+    text: "I can't recommend these guys enough. Not only is the service excellent, but the stock is superb quality with brilliant prices. Would go nowhere else for a fantastic deal on all furniture needs.",
   },
   {
     id: "2",
-    name: "David L.",
-    location: "Launceston, TAS",
+    name: "Oli B",
     rating: 5,
-    text: "Best furniture shopping experience we've had in Tasmania. Quality products, fair prices, and they genuinely care about getting it right for your home.",
-    image:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&q=80",
+    text: "Being picky about styles and comfort in couches, we were glad to have dropped into Hymark Furniture. Glenn looked after us extremely well — not only helping us find the right lounge set at the right price, but also making sure it was delivered.",
   },
   {
     id: "3",
-    name: "Emma R.",
-    location: "Devonport, TAS",
+    name: "Philippa Perinski",
     rating: 5,
-    text: "From showroom visit to delivery day — everything was professional. The lounge suite exceeded our expectations. Highly recommend Hymark to anyone in Tassie.",
-    image:
-      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&q=80",
+    text: "Very happy with the leather swivel recliners I bought. Good price, prompt delivery a day later. Special mention of the two very pleasant and friendly young men — Jason and Justin — who delivered them.",
+  },
+  {
+    id: "4",
+    name: "jesica smith",
+    rating: 5,
+    text: "Loved the Hymark experience. I walked in on a Thursday afternoon, had a bit of a look around, and then was approached by a staff member who helped me out so so much.",
   },
 ] as const;
 

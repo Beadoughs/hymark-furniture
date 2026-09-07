@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { Star } from "lucide-react";
 import { REVIEWS } from "@/lib/data";
 import { FadeIn } from "@/components/motion/fade-in";
@@ -20,6 +19,13 @@ function StarRating({ count }: { count: number }) {
   );
 }
 
+function initialsFromName(name: string) {
+  const parts = name.trim().split(/\s+/).filter(Boolean);
+  if (parts.length === 0) return "?";
+  if (parts.length === 1) return parts[0].slice(0, 2).toUpperCase();
+  return `${parts[0][0]}${parts[parts.length - 1][0]}`.toUpperCase();
+}
+
 export function Reviews() {
   return (
     <section className="section-space bg-white">
@@ -32,7 +38,7 @@ export function Reviews() {
           />
         </FadeIn>
 
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {REVIEWS.map((review, index) => (
             <FadeIn key={review.id} delay={index * 0.08}>
               <Card className="h-full bg-secondary/30">
@@ -42,21 +48,18 @@ export function Reviews() {
                     &ldquo;{review.text}&rdquo;
                   </blockquote>
                   <div className="mt-6 flex items-center gap-4 border-t border-border pt-6">
-                    <div className="relative h-12 w-12 overflow-hidden rounded-full">
-                      <Image
-                        src={review.image}
-                        alt=""
-                        fill
-                        className="object-cover"
-                        sizes="48px"
-                      />
+                    <div
+                      className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-brand-charcoal/90 text-sm font-semibold tracking-wide text-white"
+                      aria-hidden
+                    >
+                      {initialsFromName(review.name)}
                     </div>
                     <div>
                       <p className="font-semibold text-brand-charcoal">
                         {review.name}
                       </p>
                       <p className="text-sm text-brand-silver">
-                        {review.location}
+                        Verified customer
                       </p>
                     </div>
                   </div>
