@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { FadeIn } from "@/components/motion/fade-in";
 
 const TIMELINE = [
@@ -46,23 +47,47 @@ export function OurStory() {
     <>
       <section className="section-space border-b border-border bg-secondary/20">
         <div className="site-container">
-          <FadeIn>
-            <div className="max-w-2xl">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-brand-graphite">
-                Hymark Furniture
-              </p>
-              <h1 className="mt-4 font-serif text-4xl text-brand-charcoal md:text-5xl">
-                Our Story
-              </h1>
-              <p className="mt-5 text-base leading-relaxed text-brand-graphite md:text-lg">
-                Since 1907, Hymark Furniture has been part of Tasmania&apos;s
-                furniture industry — adapting through generations of change while
-                never losing sight of what matters. Today, the Hill family
-                continues a legacy of quality, craftsmanship and service that
-                spans more than a century.
-              </p>
-            </div>
-          </FadeIn>
+          <div className="grid items-end gap-10 lg:grid-cols-12 lg:gap-14">
+            <FadeIn className="lg:col-span-5">
+              <div className="max-w-xl">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-brand-graphite">
+                  Hymark Furniture
+                </p>
+                <h1 className="mt-4 font-serif text-4xl text-brand-charcoal md:text-5xl">
+                  Our Story
+                </h1>
+                <p className="mt-3 font-serif text-2xl text-brand-charcoal/85 md:text-3xl">
+                  More Than a Century of Craft
+                </p>
+                <p className="mt-5 text-base leading-relaxed text-brand-graphite md:text-lg">
+                  Since 1907, Hymark Furniture has been part of Tasmania&apos;s
+                  furniture industry — adapting through generations of change
+                  while never losing sight of what matters. Today, the Hill
+                  family continues a legacy of quality, craftsmanship and
+                  service that spans more than a century.
+                </p>
+              </div>
+            </FadeIn>
+
+            <FadeIn delay={0.12} className="lg:col-span-7">
+              <figure>
+                <div className="relative aspect-[3/4] w-full overflow-hidden sm:aspect-[4/5] lg:aspect-[3/4]">
+                  <Image
+                    src="/images/our-story/century-of-craft.jpg"
+                    alt="Archival photo of manager Mr M. Moore and assistant manager Mr J. Hill inspecting a contemporary wooden buffet — a heritage of craftsmanship"
+                    fill
+                    priority
+                    className="object-cover object-top"
+                    sizes="(max-width: 1024px) 100vw, 58vw"
+                  />
+                </div>
+                <figcaption className="mt-4 max-w-xl text-sm leading-relaxed text-brand-graphite/80">
+                  A legacy of quality: manager Mr M. Moore and assistant manager
+                  Mr J. Hill inspect the fine details of a handcrafted buffet.
+                </figcaption>
+              </figure>
+            </FadeIn>
+          </div>
         </div>
       </section>
 

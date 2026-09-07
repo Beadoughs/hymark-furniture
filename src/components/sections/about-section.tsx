@@ -13,15 +13,22 @@ export function AboutSection() {
       <div className="site-container">
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
           <FadeIn>
-            <div className="relative aspect-[4/5] overflow-hidden rounded-md">
-              <Image
-                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80"
-                alt="Hymark Furniture showroom interior"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
-            </div>
+            <figure>
+              <div className="relative aspect-[4/5] overflow-hidden">
+                <Image
+                  src="/images/our-story/century-of-craft.jpg"
+                  alt="Archival photo of manager Mr M. Moore and assistant manager Mr J. Hill inspecting a contemporary wooden buffet — a heritage of craftsmanship"
+                  fill
+                  className="object-cover object-top"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+              </div>
+              <figcaption className="mt-3 text-sm leading-relaxed text-brand-graphite/80">
+                Manager Mr M. Moore and assistant manager Mr J. Hill inspect a
+                handcrafted buffet — a moment from Hymark&apos;s heritage of
+                craft.
+              </figcaption>
+            </figure>
           </FadeIn>
 
           <FadeIn delay={0.15}>
