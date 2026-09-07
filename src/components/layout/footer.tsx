@@ -10,7 +10,6 @@ const FOOTER_LINKS = {
     { label: "Lounges", href: "/collections/lounges" },
   ],
   care: [
-    { label: "Delivery Information", href: "/showroom" },
     { label: "Finance Options", href: "/finance" },
     { label: "Warranty", href: "/warranty" },
     { label: "Privacy Policy", href: "/privacy" },
