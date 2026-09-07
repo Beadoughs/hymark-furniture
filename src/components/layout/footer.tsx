@@ -13,7 +13,7 @@ const FOOTER_LINKS = {
     { label: "Delivery Information", href: "/showroom" },
     { label: "Finance Options", href: "/contact" },
     { label: "Care & Maintenance", href: "/about" },
-    { label: "Warranty", href: "/about" },
+    { label: "Warranty", href: "/warranty" },
   ],
 };
 
