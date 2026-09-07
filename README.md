@@ -71,8 +71,18 @@ Product tags `best-seller`, `new`, and `sale` map to card badges.
 ### Collections show demo products instead of your catalog
 
 1. **Environment variables** — Copy `.env.example` to `.env.local` and set `SHOPIFY_STORE_DOMAIN` and `SHOPIFY_STOREFRONT_ACCESS_TOKEN`. Restart the dev server after changes.
-2. **Rebuild after adding env vars** — Collection pages use ISR (`revalidate: 60`). Run `npm run build` again when deploying so production picks up credentials.
+2. **Rebuild after adding env vars** — Collection and product pages use ISR (`revalidate: 30`). Run `npm run build` again when deploying so production picks up credentials.
 3. **Test the connection** — Run `npm run test:shopify`. It reports per-collection product counts without printing tokens.
+
+### Deleted Shopify products still appear
+
+Product pages and collections refresh from Shopify on the ISR interval (`revalidate: 30` seconds). After deleting or unpublishing a product in Shopify Admin:
+
+1. Confirm it is removed (or unpublished from the Storefront sales channel) in Admin.
+2. Wait up to ~30 seconds for the next revalidation, **or** redeploy so ISR cache is cleared.
+3. Hard-refresh the browser (or try an incognito window) to avoid a stale client cache.
+
+When Shopify is connected, mock/demo products from `src/lib/data.ts` are **never** mixed into collections or best sellers. Deleted Storefront listings can also be force-hidden via `src/lib/shopify/exclusions.ts` until they disappear from the API.
 
 ### Collections are empty when Shopify is connected
 

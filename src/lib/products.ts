@@ -10,6 +10,7 @@ import {
   logShopifyWarning,
   type ProductDataSource,
 } from "@/lib/shopify/debug";
+import { isExcludedProduct } from "@/lib/shopify/exclusions";
 import { getShopifyCollectionByHandle } from "@/lib/shopify/get-collections";
 import { getShopifyProducts } from "@/lib/shopify/get-products";
 import { getShopifyProductByHandle } from "@/lib/shopify/get-product";
@@ -27,6 +28,8 @@ export type CollectionPageData = {
 export async function getBestSellerProducts(limit = 8): Promise<Product[]> {
   if (isShopifyConfigured()) {
     try {
+      // When Shopify is connected, never mix in mock PRODUCTS — return API
+      // results only (or [] if empty / failed).
       const collection = await getShopifyCollectionByHandle("best-sellers", limit);
       if (collection.products.length > 0) {
         logProductDataSource(
@@ -34,7 +37,7 @@ export async function getBestSellerProducts(limit = 8): Promise<Product[]> {
           "shopify",
           `best-sellers collection (${collection.products.length} products)`
         );
-        return collection.products;
+        return collection.products.slice(0, limit);
       }
 
       const catalog = (await getShopifyProducts(limit)).slice(0, limit);
@@ -59,7 +62,10 @@ export async function getBestSellerProducts(limit = 8): Promise<Product[]> {
   }
 
   logProductDataSource("best sellers", "mock");
-  return PRODUCTS.slice(0, limit);
+  return PRODUCTS.filter((product) => !isExcludedProduct(product)).slice(
+    0,
+    limit
+  );
 }
 
 export async function getCollectionPageData(
@@ -106,7 +112,9 @@ export async function getCollectionPageData(
     }
   }
 
-  const mockProducts = getCollectionProducts(collection);
+  const mockProducts = getCollectionProducts(collection).filter(
+    (product) => !isExcludedProduct(product)
+  );
   logProductDataSource(
     `collection "${slug}"`,
     "mock",
@@ -131,12 +139,17 @@ export async function getCollectionProductCount(
 export async function getProductPageData(
   handle: string
 ): Promise<{ product: Product; shopifyConnected: boolean } | null> {
+  if (isExcludedProduct({ handle, title: handle.replace(/-/g, " ") })) {
+    return null;
+  }
+
   if (isShopifyConfigured()) {
     try {
       const product = await getShopifyProductByHandle(handle);
-      if (product) {
+      if (product && !isExcludedProduct(product)) {
         return { product, shopifyConnected: true };
       }
+      // Shopify connected: never fall back to mock for missing/deleted products
       return null;
     } catch (error) {
       console.error(`[shopify] Failed to load product "${handle}":`, error);
@@ -148,7 +161,7 @@ export async function getProductPageData(
     (product) => product.handle === handle || product.id === handle
   );
 
-  if (!mockProduct) {
+  if (!mockProduct || isExcludedProduct(mockProduct)) {
     return null;
   }
 

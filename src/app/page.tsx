@@ -7,7 +7,7 @@ import { Showroom } from "@/components/sections/showroom";
 import { Reviews } from "@/components/sections/reviews";
 import { Newsletter } from "@/components/sections/newsletter";
 
-export const revalidate = 60;
+export const revalidate = 30;
 
 export default function HomePage() {
   return (

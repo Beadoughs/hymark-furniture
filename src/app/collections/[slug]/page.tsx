@@ -4,7 +4,7 @@ import { COLLECTIONS } from "@/lib/collections";
 import { getCollectionPageData } from "@/lib/products";
 import { CollectionView } from "@/components/pages/collection-view";
 
-export const revalidate = 60;
+export const revalidate = 30;
 
 type CollectionRouteProps = {
   params: Promise<{ slug: string }>;

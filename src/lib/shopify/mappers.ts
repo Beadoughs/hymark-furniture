@@ -1,4 +1,5 @@
 import type { Product } from "@/lib/data";
+import { withoutExcludedProducts } from "@/lib/shopify/exclusions";
 import type { ShopifyProduct } from "@/lib/shopify/types";
 
 function parseAmount(amount: string): number {
@@ -72,5 +73,7 @@ export function mapShopifyProductToProduct(product: ShopifyProduct): Product {
 }
 
 export function mapShopifyProducts(products: ShopifyProduct[]): Product[] {
-  return products.map(mapShopifyProductToProduct);
+  return withoutExcludedProducts(
+    products.map(mapShopifyProductToProduct)
+  );
 }
