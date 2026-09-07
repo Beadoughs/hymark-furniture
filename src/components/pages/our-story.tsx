@@ -3,24 +3,46 @@
 import Image from "next/image";
 import { FadeIn } from "@/components/motion/fade-in";
 
-const TIMELINE = [
+type TimelineEvent = {
+  year: string;
+  title: string;
+  description: string;
+  image?: {
+    src: string;
+    alt: string;
+  };
+};
+
+const TIMELINE: TimelineEvent[] = [
   {
     year: "1907",
     title: "Where It All Began",
     description:
       "Hymark Furniture was established in 1907 — part of the furniture industry for more than a century. Through rebranding, structural changes and evolving business practices, we have adapted while remaining committed to quality and service.",
+    image: {
+      src: "/images/our-story/1907-founding.png",
+      alt: "Historical black and white photograph from circa 1907 showing a large group of men in suits and hats posed in front of the Shell Benzine and British Imperial Oil Coy building in Launceston, alongside vintage motor vehicles",
+    },
   },
   {
     year: "1922",
     title: "Resilience Through Fire",
     description:
       "A major fire devastated the site, which at the time employed 132 people. We rebuilt and carried on — a testament to the determination that has defined us ever since.",
+    image: {
+      src: "/images/our-story/1922-fire.png",
+      alt: "Archival photograph of a fire-damaged furniture factory showing the hollowed brick facade with a FURNITURE MANUFACTURERS sign, rubble, and men surveying the ruins after the 1922 fire",
+    },
   },
   {
     year: "1929",
     title: "Weathering the Flood",
     description:
       "A devastating flood struck, yet the business endured. Challenges like these forged the resilience that would see us grow through decades to come.",
+    image: {
+      src: "/images/our-story/1929-flood.png",
+      alt: "Archival black-and-white photograph of a furniture workshop interior after the 1929 flood, with workers standing among deep water, floating lumber, and debris under a corrugated metal roof",
+    },
   },
   {
     year: "1961",
@@ -40,7 +62,7 @@ const TIMELINE = [
     description:
       "Furniture is no longer manufactured on site, but every piece is produced to Hill family quality standards. Our reputation for value, craftsmanship and service endures — as it has for more than a century.",
   },
-] as const;
+];
 
 export function OurStory() {
   return (
@@ -119,6 +141,20 @@ export function OurStory() {
                     <p className="mt-3 text-base leading-relaxed text-brand-graphite">
                       {event.description}
                     </p>
+
+                    {event.image ? (
+                      <figure className="mt-5 md:mt-6">
+                        <div className="relative aspect-[16/10] w-full overflow-hidden bg-secondary/40 sm:aspect-[2/1]">
+                          <Image
+                            src={event.image.src}
+                            alt={event.image.alt}
+                            fill
+                            className="object-cover object-center"
+                            sizes="(max-width: 768px) 100vw, 48rem"
+                          />
+                        </div>
+                      </figure>
+                    ) : null}
                   </li>
                 </FadeIn>
               ))}
