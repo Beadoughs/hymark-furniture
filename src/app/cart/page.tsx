@@ -56,7 +56,7 @@ export default async function CartPage() {
               Your cart is empty
             </h2>
             <p className="mx-auto mt-3 max-w-lg text-brand-graphite">
-              Discover premium lounges, dining settings, bedroom suites and more.
+              Discover premium living, dining and lounge pieces and more.
             </p>
             <Button variant="brand" className="mt-6" asChild>
               <Link href="/collections/living">Start Shopping</Link>

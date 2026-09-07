@@ -11,10 +11,7 @@ import {
   type ProductDataSource,
 } from "@/lib/shopify/debug";
 import { getShopifyCollectionByHandle } from "@/lib/shopify/get-collections";
-import {
-  getShopifyProducts,
-  getShopifySaleProducts,
-} from "@/lib/shopify/get-products";
+import { getShopifyProducts } from "@/lib/shopify/get-products";
 import { getShopifyProductByHandle } from "@/lib/shopify/get-product";
 
 export type CollectionPageData = {
@@ -77,43 +74,6 @@ export async function getCollectionPageData(
 
   if (shopifyConnected) {
     try {
-      if (collection.clearanceOnly) {
-        const saleProducts = await getShopifySaleProducts();
-        if (saleProducts.length > 0) {
-          logProductDataSource(
-            `collection "${slug}"`,
-            "shopify",
-            `${saleProducts.length} sale products`
-          );
-          return {
-            collection,
-            products: saleProducts,
-            dataSource: "shopify",
-            shopifyConnected: true,
-          };
-        }
-
-        const clearanceCollection = await getShopifyCollectionByHandle(
-          "clearance"
-        );
-        logProductDataSource(
-          `collection "${slug}"`,
-          "shopify",
-          clearanceCollection.products.length > 0
-            ? `clearance collection (${clearanceCollection.products.length} products)`
-            : "clearance collection empty"
-        );
-        return {
-          collection,
-          products: clearanceCollection.products,
-          heroTitle: clearanceCollection.title,
-          heroDescription: clearanceCollection.description,
-          heroImage: clearanceCollection.heroImage,
-          dataSource: "shopify",
-          shopifyConnected: true,
-        };
-      }
-
       const shopifyCollection = await getShopifyCollectionByHandle(
         collection.slug
       );

@@ -1,13 +1,12 @@
 import { PRODUCTS, type Product } from "@/lib/data";
 
 export type CollectionConfig = {
-  slug: "living" | "dining" | "bedroom" | "outdoor" | "clearance";
+  slug: "living" | "dining" | "lounge";
   label: string;
   heroTitle: string;
   heroDescription: string;
   heroImage: string;
   categoryFilters?: string[];
-  clearanceOnly?: boolean;
 };
 
 export const COLLECTIONS: CollectionConfig[] = [
@@ -16,10 +15,10 @@ export const COLLECTIONS: CollectionConfig[] = [
     label: "Living",
     heroTitle: "Living Collections",
     heroDescription:
-      "Statement lounges, recliners and living essentials curated for comfort, quality and everyday Tasmanian homes.",
+      "Living essentials curated for comfort, quality and everyday Tasmanian homes — from recliners to refined workspaces.",
     heroImage:
-      "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1600&q=85",
-    categoryFilters: ["Lounges", "Recliners"],
+      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1600&q=85",
+    categoryFilters: ["Living"],
   },
   {
     slug: "dining",
@@ -32,34 +31,14 @@ export const COLLECTIONS: CollectionConfig[] = [
     categoryFilters: ["Dining"],
   },
   {
-    slug: "bedroom",
-    label: "Bedroom",
-    heroTitle: "Bedroom Collections",
+    slug: "lounge",
+    label: "Lounge",
+    heroTitle: "Lounge Collections",
     heroDescription:
-      "Create restful spaces with premium beds, bedroom storage and timeless pieces made for long-term comfort.",
+      "Statement lounges and modular seating curated for comfort, quality and everyday Tasmanian homes.",
     heroImage:
-      "https://images.unsplash.com/photo-1616594039964-40891a91a223?w=1600&q=85",
-    categoryFilters: ["Bedroom"],
-  },
-  {
-    slug: "outdoor",
-    label: "Outdoor",
-    heroTitle: "Outdoor Collections",
-    heroDescription:
-      "Entertain in style with weather-ready outdoor lounges and dining settings tailored for Tasmanian conditions.",
-    heroImage:
-      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1600&q=85",
-    categoryFilters: ["Outdoor"],
-  },
-  {
-    slug: "clearance",
-    label: "Clearance",
-    heroTitle: "Clearance Highlights",
-    heroDescription:
-      "Limited-time markdowns across premium ranges. Explore sale-priced favourites while stock lasts.",
-    heroImage:
-      "https://images.unsplash.com/photo-1493663284031-b7e3aefcae83?w=1600&q=85",
-    clearanceOnly: true,
+      "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1600&q=85",
+    categoryFilters: ["Lounge"],
   },
 ];
 
@@ -68,10 +47,6 @@ export function getCollectionBySlug(slug: string) {
 }
 
 export function getCollectionProducts(collection: CollectionConfig): Product[] {
-  if (collection.clearanceOnly) {
-    return PRODUCTS.filter((product) => typeof product.salePrice === "number");
-  }
-
   if (!collection.categoryFilters?.length) {
     return PRODUCTS;
   }

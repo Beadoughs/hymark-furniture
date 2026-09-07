@@ -48,7 +48,7 @@ const apiVersion =
   fileEnv.SHOPIFY_STOREFRONT_API_VERSION?.trim() ||
   "2025-01";
 
-const handles = ["living", "dining", "bedroom", "outdoor", "clearance"];
+const handles = ["living", "dining", "lounge"];
 
 console.log("Hymark Shopify connectivity test\n");
 console.log(`  .env.local: ${existsSync(envPath) ? "found" : "MISSING"}`);
@@ -165,7 +165,7 @@ try {
     console.log(
       "WARN — API connected but no collection products returned. In Shopify Admin:"
     );
-    console.log("  1. Create collections with handles: living, dining, bedroom, outdoor, clearance");
+    console.log("  1. Create collections with handles: living, dining, lounge");
     console.log("  2. Add products to each collection");
     console.log(
       "  3. Publish products to the sales channel tied to your Storefront token (Online Store or Headless)"

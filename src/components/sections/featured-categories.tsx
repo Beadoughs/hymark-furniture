@@ -15,7 +15,7 @@ export function FeaturedCategories() {
           <SectionHeading
             eyebrow="Collections"
             title="Featured Categories"
-            description="Explore our curated ranges — from statement lounges to outdoor entertaining, every piece chosen for quality and lasting style."
+            description="Explore our curated ranges — living essentials, dining settings and statement lounges, every piece chosen for quality and lasting style."
           />
         </FadeIn>
 

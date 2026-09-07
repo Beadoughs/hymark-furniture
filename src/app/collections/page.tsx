@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 export const metadata: Metadata = {
   title: "Shop Collections",
   description:
-    "Browse Hymark Furniture collections including living, dining, bedroom, outdoor and clearance favourites.",
+    "Browse Hymark Furniture collections including living, dining and lounge favourites.",
 };
 
 export const revalidate = 60;
@@ -32,8 +32,8 @@ export default async function CollectionsLandingPage() {
             Explore Every Hymark Range
           </h1>
           <p className="mt-5 text-base leading-relaxed text-brand-graphite md:text-lg">
-            Discover curated living, dining, bedroom and outdoor pieces, plus
-            clearance offers updated with sale-ready stock.
+            Discover curated living, dining and lounge pieces chosen for
+            quality, comfort and lasting style.
           </p>
         </div>
 

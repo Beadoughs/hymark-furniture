@@ -32,8 +32,8 @@ export function Hero() {
             Premium Furniture For Tasmanian Homes
           </h1>
           <p className="mt-5 max-w-lg text-base leading-relaxed text-white/90 md:text-lg">
-            Discover quality lounges, dining, bedroom and outdoor collections
-            with trusted local service and delivery across Tasmania.
+            Discover quality living, dining and lounge collections with trusted
+            local service and delivery across Tasmania.
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">

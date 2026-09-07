@@ -7,9 +7,7 @@ const FOOTER_LINKS = {
   shop: [
     { label: "Living", href: "/collections/living" },
     { label: "Dining", href: "/collections/dining" },
-    { label: "Bedroom", href: "/collections/bedroom" },
-    { label: "Outdoor", href: "/collections/outdoor" },
-    { label: "Clearance", href: "/collections/clearance" },
+    { label: "Lounge", href: "/collections/lounge" },
   ],
   care: [
     { label: "Delivery Information", href: "/showroom" },
@@ -97,7 +95,7 @@ export function Footer() {
               Quick Links
             </h3>
             <ul className="space-y-2.5">
-              {NAV_LINKS.slice(5).map((link) => (
+              {NAV_LINKS.slice(3).map((link) => (
                 <li key={link.label}>
                   <Link
                     href={link.href}

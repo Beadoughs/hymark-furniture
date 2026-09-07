@@ -60,9 +60,7 @@ Create **manual or automated collections** with handles that match site navigati
 | --------- | ------------------------- |
 | `/collections/living` | `living` |
 | `/collections/dining` | `dining` |
-| `/collections/bedroom` | `bedroom` |
-| `/collections/outdoor` | `outdoor` |
-| `/collections/clearance` | `clearance` (or any products with compare-at pricing) |
+| `/collections/lounge` | `lounge` |
 
 Optional: a `best-sellers` collection powers the homepage best sellers section; otherwise the first products from the catalog are shown.
 
@@ -82,7 +80,7 @@ The site shows **“No products in this collection”** when Shopify is configur
 
 | Check | What to do in Shopify Admin |
 | ----- | ----------------------------- |
-| **Collection handles** | Create collections with handles exactly: `living`, `dining`, `bedroom`, `outdoor`, `clearance` (URL slug = handle). |
+| **Collection handles** | Create collections with handles exactly: `living`, `dining`, `lounge` (URL slug = handle). |
 | **Products in collection** | Open each collection → **Products** → add the relevant items. |
 | **Sales channel publication** | Products must be published to the channel tied to your Storefront token (usually **Online Store** or a **Headless** custom app channel). In the product editor: **Product availability** → enable the correct channel. Bulk: **Products** → select items → **Bulk edit** → **Columns** → **Published on…** |
 | **Storefront API scopes** | Custom app needs `unauthenticated_read_product_listings` (and related cart scopes for checkout). |

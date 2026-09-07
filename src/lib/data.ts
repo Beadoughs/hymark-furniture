@@ -1,20 +1,18 @@
 export const NAV_LINKS = [
   { label: "Living", href: "/collections/living" },
   { label: "Dining", href: "/collections/dining" },
-  { label: "Bedroom", href: "/collections/bedroom" },
-  { label: "Outdoor", href: "/collections/outdoor" },
-  { label: "Clearance", href: "/collections/clearance" },
+  { label: "Lounge", href: "/collections/lounge" },
   { label: "Our Story", href: "/about" },
   { label: "Contact", href: "/contact" },
 ] as const;
 
 export const CATEGORIES = [
   {
-    id: "lounges",
-    title: "Lounges",
-    description: "Premium comfort for every living space",
+    id: "living",
+    title: "Living",
+    description: "Essentials for everyday Tasmanian homes",
     image:
-      "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80",
+      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80",
     href: "/collections/living",
   },
   {
@@ -26,36 +24,12 @@ export const CATEGORIES = [
     href: "/collections/dining",
   },
   {
-    id: "bedroom",
-    title: "Bedroom",
-    description: "Restful retreats with timeless style",
+    id: "lounge",
+    title: "Lounge",
+    description: "Premium comfort for every living space",
     image:
-      "https://images.unsplash.com/photo-1616594039964-40891a91a223?w=800&q=80",
-    href: "/collections/bedroom",
-  },
-  {
-    id: "outdoor",
-    title: "Outdoor",
-    description: "Entertain in Tasmanian style",
-    image:
-      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&q=80",
-    href: "/collections/outdoor",
-  },
-  {
-    id: "recliners",
-    title: "Recliners",
-    description: "Unwind with premium reclining comfort",
-    image:
-      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80",
-    href: "/collections/living",
-  },
-  {
-    id: "home-office",
-    title: "Home Office",
-    description: "Work from home in refined comfort",
-    image:
-      "https://images.unsplash.com/photo-1592078615290-033ee584e267?w=800&q=80",
-    href: "/collections/living",
+      "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80",
+    href: "/collections/lounge",
   },
 ] as const;
 
@@ -79,7 +53,7 @@ export const PRODUCTS: Product[] = [
   {
     id: "milford-3-seat",
     title: "Milford 3 Seat Leather Lounge",
-    category: "Lounges",
+    category: "Lounge",
     price: 3499,
     salePrice: 2999,
     image:
@@ -99,31 +73,9 @@ export const PRODUCTS: Product[] = [
       "Solid oak table with six upholstered dining chairs. Seats eight comfortably for weekend gatherings.",
   },
   {
-    id: "tasman-king-bed",
-    title: "Tasman King Bed with Storage",
-    category: "Bedroom",
-    price: 2199,
-    salePrice: 1899,
-    image:
-      "https://images.unsplash.com/photo-1616594039964-40891a91a223?w=600&q=80",
-    description:
-      "Upholstered headboard with integrated storage drawers. Premium fabrics in neutral tones.",
-    badge: "Popular",
-  },
-  {
-    id: "harbour-outdoor-lounge",
-    title: "Harbour Outdoor Lounge Setting",
-    category: "Outdoor",
-    price: 3299,
-    image:
-      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=600&q=80",
-    description:
-      "Weather-resistant wicker with UV-protected cushions. Designed for Tasmanian outdoor living.",
-  },
-  {
     id: "heritage-recliner",
     title: "Heritage Power Recliner",
-    category: "Recliners",
+    category: "Living",
     price: 1799,
     salePrice: 1499,
     image:
@@ -134,7 +86,7 @@ export const PRODUCTS: Product[] = [
   {
     id: "studio-desk",
     title: "Studio Executive Desk",
-    category: "Home Office",
+    category: "Living",
     price: 1299,
     image:
       "https://images.unsplash.com/photo-1592078615290-033ee584e267?w=600&q=80",
@@ -144,7 +96,7 @@ export const PRODUCTS: Product[] = [
   {
     id: "modular-corner",
     title: "Modular Corner Lounge — 5 Piece",
-    category: "Lounges",
+    category: "Lounge",
     price: 4299,
     salePrice: 3799,
     image:
@@ -154,14 +106,36 @@ export const PRODUCTS: Product[] = [
     badge: "New",
   },
   {
-    id: "bedside-pair",
-    title: "Bedford Bedside Tables — Pair",
-    category: "Bedroom",
+    id: "harbour-lounge-setting",
+    title: "Harbour Lounge Setting",
+    category: "Lounge",
+    price: 3299,
+    image:
+      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=600&q=80",
+    description:
+      "Relaxed lounge setting with deep cushions and timber accents. Designed for Tasmanian living.",
+  },
+  {
+    id: "bedford-side-tables",
+    title: "Bedford Side Tables — Pair",
+    category: "Living",
     price: 599,
     image:
       "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=600&q=80",
     description:
       "Matching pair with soft-close drawers and brushed metal handles.",
+  },
+  {
+    id: "tasman-storage-console",
+    title: "Tasman Storage Console",
+    category: "Living",
+    price: 2199,
+    salePrice: 1899,
+    image:
+      "https://images.unsplash.com/photo-1616594039964-40891a91a223?w=600&q=80",
+    description:
+      "Solid timber console with generous storage. A versatile piece for living spaces.",
+    badge: "Popular",
   },
 ];
 
@@ -228,7 +202,7 @@ export const REVIEWS = [
     name: "Emma R.",
     location: "Devonport, TAS",
     rating: 5,
-    text: "From showroom visit to delivery day — everything was professional. The bedroom suite exceeded our expectations. Highly recommend Hymark to anyone in Tassie.",
+    text: "From showroom visit to delivery day — everything was professional. The lounge suite exceeded our expectations. Highly recommend Hymark to anyone in Tassie.",
     image:
       "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&q=80",
   },
@@ -251,23 +225,23 @@ export const GALLERY_IMAGES = [
   },
   {
     id: "g3",
-    category: "bedroom",
-    src: "https://images.unsplash.com/photo-1616594039964-40891a91a223?w=600&q=80",
-    alt: "Serene bedroom interior",
+    category: "lounge",
+    src: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80",
+    alt: "Contemporary lounge styling",
     height: "medium" as const,
   },
   {
     id: "g4",
-    category: "outdoor",
+    category: "living",
     src: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80",
-    alt: "Outdoor entertaining area",
+    alt: "Bright living space",
     height: "tall" as const,
   },
   {
     id: "g5",
-    category: "living",
-    src: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80",
-    alt: "Contemporary lounge styling",
+    category: "lounge",
+    src: "https://images.unsplash.com/photo-1493663284031-b7e3aefcae83?w=600&q=80",
+    alt: "Modular lounge arrangement",
     height: "medium" as const,
   },
   {
@@ -279,16 +253,16 @@ export const GALLERY_IMAGES = [
   },
   {
     id: "g7",
-    category: "bedroom",
+    category: "living",
     src: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=600&q=80",
-    alt: "Luxury bedroom detail",
+    alt: "Living room detail",
     height: "medium" as const,
   },
   {
     id: "g8",
-    category: "outdoor",
+    category: "lounge",
     src: "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=600&q=80",
-    alt: "Coastal outdoor furniture",
+    alt: "Relaxed lounge seating",
     height: "medium" as const,
   },
 ] as const;

@@ -26,17 +26,17 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
     default:
-      "Hymark Furniture | Premium Furniture Store Tasmania — Lounges, Dining & Bedroom",
+      "Hymark Furniture | Premium Furniture Store Tasmania — Living, Dining & Lounge",
     template: "%s | Hymark Furniture Tasmania",
   },
   description:
-    "Tasmania's trusted family-owned furniture store. Premium lounges, dining furniture, bedroom suites and outdoor settings with delivery across Tasmania. Visit our showroom today.",
+    "Tasmania's trusted family-owned furniture store. Premium living, dining and lounge furniture with delivery across Tasmania. Visit our showroom today.",
   keywords: [
     "Furniture Tasmania",
     "Furniture Store Tasmania",
     "Lounges Tasmania",
     "Dining Furniture Tasmania",
-    "Bedroom Furniture Tasmania",
+    "Living Furniture Tasmania",
     "Furniture Delivery Tasmania",
     "Hymark Furniture",
     "furniture Hobart",
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     title:
       "Hymark Furniture | Premium Furniture Store Tasmania",
     description:
-      "Family-owned Tasmanian furniture retailer. Premium lounges, dining, bedroom & outdoor furniture with statewide delivery.",
+      "Family-owned Tasmanian furniture retailer. Premium living, dining & lounge furniture with statewide delivery.",
     images: [
       {
         url: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1200&q=80",
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Hymark Furniture | Premium Furniture Tasmania",
     description:
-      "Family-owned furniture store with delivery across Tasmania. Lounges, dining, bedroom & outdoor.",
+      "Family-owned furniture store with delivery across Tasmania. Living, dining & lounge.",
     images: [
       "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1200&q=80",
     ],
@@ -81,7 +81,7 @@ const localBusinessJsonLd = {
   "@type": "FurnitureStore",
   name: "Hymark Furniture",
   description:
-    "Family-owned premium furniture retailer serving Tasmania with lounges, dining, bedroom and outdoor furniture.",
+    "Family-owned premium furniture retailer serving Tasmania with living, dining and lounge furniture.",
   url: siteUrl,
   telephone: SHOWROOM.phone,
   email: SHOWROOM.email,

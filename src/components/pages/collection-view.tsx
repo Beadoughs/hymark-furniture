@@ -33,13 +33,10 @@ export function CollectionView({
   const [dialogOpen, setDialogOpen] = useState(false);
 
   const hasProducts = products.length > 0;
-  const introStat = useMemo(() => {
-    if (collection.clearanceOnly) {
-      return `${products.length} sale offers`;
-    }
-
-    return `${products.length} curated pieces`;
-  }, [collection.clearanceOnly, products.length]);
+  const introStat = useMemo(
+    () => `${products.length} curated pieces`,
+    [products.length]
+  );
 
   return (
     <section className="bg-white">
