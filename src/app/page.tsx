@@ -1,7 +1,6 @@
 import { Hero } from "@/components/sections/hero";
 import { FeaturedCategories } from "@/components/sections/featured-categories";
 import { BestSellers } from "@/components/sections/best-sellers";
-import { WhyChoose } from "@/components/sections/why-choose";
 import { AboutSection } from "@/components/sections/about-section";
 import { Showroom } from "@/components/sections/showroom";
 import { Reviews } from "@/components/sections/reviews";
@@ -15,7 +14,6 @@ export default function HomePage() {
       <Hero />
       <FeaturedCategories />
       <BestSellers />
-      <WhyChoose />
       <AboutSection />
       <Showroom />
       <Reviews />
