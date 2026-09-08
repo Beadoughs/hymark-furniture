@@ -8,10 +8,21 @@ export type ShopifyImage = {
   altText?: string | null;
 };
 
+export type ShopifySelectedOption = {
+  name: string;
+  value: string;
+};
+
+export type ShopifyProductOption = {
+  name: string;
+  values: string[];
+};
+
 export type ShopifyProductVariant = {
   id: string;
   title: string;
   availableForSale: boolean;
+  selectedOptions: ShopifySelectedOption[];
   price: ShopifyMoney;
   compareAtPrice?: ShopifyMoney | null;
   image?: ShopifyImage | null;
@@ -31,6 +42,7 @@ export type ShopifyProduct = {
   compareAtPriceRange: {
     minVariantPrice: ShopifyMoney;
   };
+  options: ShopifyProductOption[];
   variants: {
     edges: Array<{ node: ShopifyProductVariant }>;
   };

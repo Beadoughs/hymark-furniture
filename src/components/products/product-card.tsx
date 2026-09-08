@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Eye } from "lucide-react";
-import { type Product } from "@/lib/data";
+import { type Product, productHasSelectableVariants } from "@/lib/data";
 import { formatPrice } from "@/lib/utils";
 import { AddToCartButton } from "@/components/cart/add-to-cart-button";
 import { Button } from "@/components/ui/button";
@@ -28,6 +28,9 @@ export function ProductCard({
   showAddToCart = true,
 }: ProductCardProps) {
   const productHref = getProductHref(product);
+  const needsOptions = productHasSelectableVariants(product);
+  const canAddDirectly =
+    showAddToCart && Boolean(product.variantId) && !needsOptions;
 
   return (
     <article className="group">
@@ -72,13 +75,19 @@ export function ProductCard({
             Quick View
           </Button>
         </div>
-        {showAddToCart && product.variantId ? (
+        {canAddDirectly ? (
           <div className="absolute inset-x-0 bottom-0 z-10 translate-y-full p-3 transition-transform duration-200 group-hover:translate-y-0">
             <AddToCartButton
               variantId={product.variantId}
               availableForSale={product.availableForSale}
               size="sm"
             />
+          </div>
+        ) : needsOptions && productHref ? (
+          <div className="absolute inset-x-0 bottom-0 z-10 translate-y-full p-3 transition-transform duration-200 group-hover:translate-y-0">
+            <Button variant="charcoal" className="w-full" size="sm" asChild>
+              <Link href={productHref}>View Options</Link>
+            </Button>
           </div>
         ) : (
           <div className="absolute inset-x-0 bottom-0 z-10 translate-y-full p-3 transition-transform duration-200 group-hover:translate-y-0 md:hidden">
@@ -123,13 +132,19 @@ export function ProductCard({
             </span>
           )}
         </div>
-        {showAddToCart && product.variantId ? (
+        {canAddDirectly ? (
           <div className="mt-3 md:hidden">
             <AddToCartButton
               variantId={product.variantId}
               availableForSale={product.availableForSale}
               size="sm"
             />
+          </div>
+        ) : needsOptions && productHref ? (
+          <div className="mt-3 md:hidden">
+            <Button variant="charcoal" className="w-full" size="sm" asChild>
+              <Link href={productHref}>View Options</Link>
+            </Button>
           </div>
         ) : null}
       </div>

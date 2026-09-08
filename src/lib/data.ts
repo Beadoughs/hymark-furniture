@@ -32,6 +32,21 @@ export const CATEGORIES = [
   },
 ] as const;
 
+export type ProductOption = {
+  name: string;
+  values: string[];
+};
+
+export type ProductVariant = {
+  id: string;
+  title: string;
+  availableForSale: boolean;
+  price: number;
+  compareAtPrice?: number;
+  image?: string;
+  selectedOptions: Array<{ name: string; value: string }>;
+};
+
 export type Product = {
   id: string;
   handle?: string;
@@ -46,7 +61,18 @@ export type Product = {
   images?: string[];
   description: string;
   badge?: string;
+  options?: ProductOption[];
+  variants?: ProductVariant[];
 };
+
+export function productHasSelectableVariants(product: Product): boolean {
+  return Boolean(
+    product.variants &&
+      product.variants.length > 1 &&
+      product.options &&
+      product.options.length > 0
+  );
+}
 
 export const PRODUCTS: Product[] = [
   {

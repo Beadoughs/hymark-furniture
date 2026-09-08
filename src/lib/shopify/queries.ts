@@ -22,12 +22,20 @@ const PRODUCT_FRAGMENT = `
         currencyCode
       }
     }
-    variants(first: 25) {
+    options {
+      name
+      values
+    }
+    variants(first: 100) {
       edges {
         node {
           id
           title
           availableForSale
+          selectedOptions {
+            name
+            value
+          }
           price {
             amount
             currencyCode

@@ -1,4 +1,4 @@
-import type { Product } from "@/lib/data";
+import type { Product, ProductOption, ProductVariant } from "@/lib/data";
 import { withoutExcludedProducts } from "@/lib/shopify/exclusions";
 import type { ShopifyProduct } from "@/lib/shopify/types";
 
@@ -24,6 +24,39 @@ function getProductImages(product: ShopifyProduct, fallback: string): string[] {
   }
 
   return [fallback];
+}
+
+function mapOptions(product: ShopifyProduct): ProductOption[] {
+  return (product.options ?? [])
+    .filter(
+      (option) =>
+        !(
+          option.name === "Title" &&
+          option.values.length === 1 &&
+          option.values[0] === "Default Title"
+        )
+    )
+    .map((option) => ({
+      name: option.name,
+      values: option.values,
+    }));
+}
+
+function mapVariants(product: ShopifyProduct): ProductVariant[] {
+  return product.variants.edges.map(({ node }) => ({
+    id: node.id,
+    title: node.title,
+    availableForSale: node.availableForSale,
+    price: parseAmount(node.price.amount),
+    compareAtPrice: node.compareAtPrice?.amount
+      ? parseAmount(node.compareAtPrice.amount)
+      : undefined,
+    image: node.image?.url || undefined,
+    selectedOptions: (node.selectedOptions ?? []).map((option) => ({
+      name: option.name,
+      value: option.value,
+    })),
+  }));
 }
 
 export function mapShopifyProductToProduct(product: ShopifyProduct): Product {
@@ -69,6 +102,8 @@ export function mapShopifyProductToProduct(product: ShopifyProduct): Product {
     description: product.description || "",
     badge,
     source: "shopify",
+    options: mapOptions(product),
+    variants: mapVariants(product),
   };
 }
 

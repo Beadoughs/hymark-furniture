@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { type Product } from "@/lib/data";
+import { type Product, productHasSelectableVariants } from "@/lib/data";
 import { formatPrice } from "@/lib/utils";
 import { AddToCartButton } from "@/components/cart/add-to-cart-button";
 import { Button } from "@/components/ui/button";
@@ -26,6 +26,8 @@ export function QuickViewDialog({
   onOpenChange,
 }: QuickViewDialogProps) {
   if (!product) return null;
+
+  const needsOptions = productHasSelectableVariants(product);
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
@@ -68,8 +70,18 @@ export function QuickViewDialog({
                 </span>
               )}
             </div>
+            {needsOptions ? (
+              <p className="mt-4 text-sm text-brand-graphite">
+                Multiple options available — choose colour, size, and more on the
+                product page.
+              </p>
+            ) : null}
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              {product.variantId ? (
+              {needsOptions && product.handle ? (
+                <Button variant="charcoal" className="flex-1" asChild>
+                  <Link href={`/products/${product.handle}`}>Choose Options</Link>
+                </Button>
+              ) : product.variantId ? (
                 <AddToCartButton
                   variantId={product.variantId}
                   availableForSale={product.availableForSale}
