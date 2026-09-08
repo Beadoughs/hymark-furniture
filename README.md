@@ -155,11 +155,11 @@ Cart ID is stored in an httpOnly cookie (`shopify-cart-id`).
 ## SEO
 
 - Metadata and Open Graph tags in `src/app/layout.tsx`
-- JSON-LD LocalBusiness schema (example Hobart address — replace with real details)
+- JSON-LD LocalBusiness schema (Launceston showroom address)
 - Keywords targeting Tasmania furniture searches
 
 ## Notes
 
-- Product prices and showroom address are mock/demo data when Shopify is not connected.
+- Product prices are mock/demo data when Shopify is not connected.
 - Images load from Unsplash (demo) or `cdn.shopify.com` (live).
 - Showroom enquiry flow remains for demo-mode products without `variantId`.
