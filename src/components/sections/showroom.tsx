@@ -35,7 +35,7 @@ export function Showroom() {
               </div>
               <div className="relative aspect-[4/3] overflow-hidden rounded-md">
                 <Image
-                  src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80"
+                  src="/images/lounges-collection.jpg"
                   alt="Premium lounge display"
                   fill
                   className="object-cover"

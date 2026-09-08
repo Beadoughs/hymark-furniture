@@ -97,7 +97,8 @@ export async function getCollectionPageData(
         products: shopifyCollection.products,
         heroTitle: shopifyCollection.title,
         heroDescription: shopifyCollection.description,
-        heroImage: shopifyCollection.heroImage,
+        // Prefer Shopify collection image when set; otherwise local fallback
+        heroImage: shopifyCollection.heroImage || collection.heroImage,
         dataSource: "shopify",
         shopifyConnected: true,
       };

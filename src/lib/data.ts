@@ -27,8 +27,7 @@ export const CATEGORIES = [
     id: "lounges",
     title: "Lounges",
     description: "Premium comfort for every living space",
-    image:
-      "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80",
+    image: "/images/lounges-collection.jpg",
     href: "/collections/lounges",
   },
 ] as const;
@@ -56,8 +55,7 @@ export const PRODUCTS: Product[] = [
     category: "Lounge",
     price: 3499,
     salePrice: 2999,
-    image:
-      "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80",
+    image: "/images/lounges-collection.jpg",
     description:
       "Full-grain leather with deep cushioning and solid timber legs. A statement piece built for everyday family living.",
     badge: "Best Seller",

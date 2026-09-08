@@ -45,7 +45,7 @@ export function mapShopifyProductToProduct(product: ShopifyProduct): Product {
   const image =
     product.featuredImage?.url ||
     variant?.image?.url ||
-    "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80";
+    "/images/lounges-collection.jpg";
 
   const badge = product.tags.includes("best-seller")
     ? "Best Seller"

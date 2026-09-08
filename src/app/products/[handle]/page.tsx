@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { getProductPageData } from "@/lib/products";
 import { ProductView } from "@/components/pages/product-view";
 
-export const revalidate = 30;
+export const revalidate = 10;
 
 type ProductRouteProps = {
   params: Promise<{ handle: string }>;

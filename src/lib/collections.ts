@@ -36,8 +36,7 @@ export const COLLECTIONS: CollectionConfig[] = [
     heroTitle: "Lounges Collections",
     heroDescription:
       "Statement lounges and modular seating curated for comfort, quality and everyday Tasmanian homes.",
-    heroImage:
-      "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1600&q=85",
+    heroImage: "/images/lounges-collection.jpg",
     categoryFilters: ["Lounge"],
   },
 ];

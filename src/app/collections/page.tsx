@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     "Browse Hymark Furniture collections including living, dining and lounge favourites.",
 };
 
-export const revalidate = 30;
+export const revalidate = 10;
 
 export default async function CollectionsLandingPage() {
   const collectionsWithCounts = await Promise.all(
