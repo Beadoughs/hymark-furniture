@@ -23,11 +23,15 @@ export function Footer() {
       <div className="site-container py-14 md:py-16">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div className="lg:col-span-1">
-            <Link href="/" className="relative mb-6 inline-block h-9 w-48">
+            <Link
+              href="/"
+              className="relative mb-6 inline-block h-10 w-[8.5rem] md:h-11 md:w-40"
+            >
               <Image
-                src="/logo.svg"
+                src="/logo.png"
                 alt="Hymark Furniture"
                 fill
+                sizes="(max-width: 768px) 136px, 160px"
                 className="object-contain object-left"
               />
             </Link>

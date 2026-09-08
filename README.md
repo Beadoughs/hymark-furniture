@@ -122,7 +122,7 @@ In development (`npm run dev`), the server console logs `[hymark:shopify]` or `[
 
 ## Logo
 
-A placeholder SVG wordmark is included at `public/logo.svg`. Replace it with the official Hymark logo when available.
+The official Hymark Furniture brand mark lives at `public/logo.png` (transparent PNG). Favicons are generated from the same mark in `src/app/icon.png` and `src/app/apple-icon.png`.
 
 ## Project Structure
 

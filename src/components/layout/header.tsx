@@ -37,11 +37,15 @@ export function Header() {
       )}
     >
       <div className="site-container flex h-16 items-center justify-between gap-4 md:h-[4.5rem]">
-        <Link href="/" className="relative h-8 w-44 shrink-0 md:h-9 md:w-52">
+        <Link
+          href="/"
+          className="relative h-9 w-[7.5rem] shrink-0 md:h-11 md:w-40"
+        >
           <Image
-            src="/logo.svg"
+            src="/logo.png"
             alt="Hymark Furniture"
             fill
+            sizes="(max-width: 768px) 120px, 160px"
             className="object-contain object-left"
             priority
           />
