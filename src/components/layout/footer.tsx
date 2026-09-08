@@ -19,32 +19,34 @@ const FOOTER_LINKS = {
 
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-white text-brand-charcoal">
+    <footer className="bg-brand-orange text-white">
       <div className="site-container py-14 md:py-16">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div className="lg:col-span-1">
             <Link
               href="/"
-              className="relative mb-6 inline-block h-10 w-[8.5rem] md:h-11 md:w-40"
+              className="mb-6 inline-flex rounded-sm bg-brand-charcoal px-3 py-2.5"
             >
-              <Image
-                src="/logo.png"
-                alt="Hymark Furniture"
-                fill
-                sizes="(max-width: 768px) 136px, 160px"
-                className="object-contain object-left"
-              />
+              <span className="relative inline-block h-9 w-[7.75rem] md:h-10 md:w-[8.5rem]">
+                <Image
+                  src="/logo.png"
+                  alt="Hymark Furniture"
+                  fill
+                  sizes="(max-width: 768px) 124px, 136px"
+                  className="object-contain object-left"
+                />
+              </span>
             </Link>
-            <p className="max-w-xs text-sm leading-relaxed text-brand-graphite">
+            <p className="max-w-xs text-sm leading-relaxed text-white/85">
               Tasmania&apos;s trusted family-owned furniture destination. Quality
               furniture, competitive prices, and service you can count on.
             </p>
-            <div className="mt-6 flex gap-4">
+            <div className="mt-6 flex gap-3">
               <a
                 href="https://facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-full border border-border p-2.5 text-brand-graphite transition-colors hover:border-brand-charcoal hover:text-brand-charcoal"
+                className="rounded-full border border-white/35 p-2.5 text-white transition-colors hover:border-white hover:bg-white/10"
                 aria-label="Facebook"
               >
                 <Facebook className="h-4 w-4" />
@@ -53,7 +55,7 @@ export function Footer() {
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-full border border-border p-2.5 text-brand-graphite transition-colors hover:border-brand-charcoal hover:text-brand-charcoal"
+                className="rounded-full border border-white/35 p-2.5 text-white transition-colors hover:border-white hover:bg-white/10"
                 aria-label="Instagram"
               >
                 <Instagram className="h-4 w-4" />
@@ -62,7 +64,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-brand-charcoal">
+            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-white">
               Shop
             </h3>
             <ul className="space-y-2.5">
@@ -70,7 +72,7 @@ export function Footer() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-sm text-brand-graphite transition-colors hover:text-brand-charcoal"
+                    className="text-sm text-white/85 transition-colors hover:text-white"
                   >
                     {link.label}
                   </Link>
@@ -80,7 +82,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-brand-charcoal">
+            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-white">
               Customer Care
             </h3>
             <ul className="space-y-2.5">
@@ -88,14 +90,14 @@ export function Footer() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-sm text-brand-graphite transition-colors hover:text-brand-charcoal"
+                    className="text-sm text-white/85 transition-colors hover:text-white"
                   >
                     {link.label}
                   </Link>
                 </li>
               ))}
             </ul>
-            <h3 className="mb-4 mt-8 text-sm font-semibold uppercase tracking-wider text-brand-charcoal">
+            <h3 className="mb-4 mt-8 text-sm font-semibold uppercase tracking-wider text-white">
               Quick Links
             </h3>
             <ul className="space-y-2.5">
@@ -103,7 +105,7 @@ export function Footer() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-sm text-brand-graphite transition-colors hover:text-brand-charcoal"
+                    className="text-sm text-white/85 transition-colors hover:text-white"
                   >
                     {link.label}
                   </Link>
@@ -113,25 +115,25 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-brand-charcoal">
+            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-white">
               Contact
             </h3>
-            <ul className="space-y-4 text-sm text-brand-graphite">
+            <ul className="space-y-4 text-sm text-white/85">
               <li>
                 <a
                   href={`tel:${SHOWROOM.phoneTel}`}
-                  className="inline-flex items-center gap-2 transition-colors hover:text-brand-charcoal"
+                  className="inline-flex items-center gap-2 transition-colors hover:text-white"
                 >
-                  <Phone className="h-4 w-4 text-brand-charcoal" />
+                  <Phone className="h-4 w-4 text-white" />
                   {SHOWROOM.phone}
                 </a>
               </li>
               <li>
                 <a
                   href={`mailto:${SHOWROOM.email}`}
-                  className="inline-flex items-center gap-2 transition-colors hover:text-brand-charcoal"
+                  className="inline-flex items-center gap-2 transition-colors hover:text-white"
                 >
-                  <Mail className="h-4 w-4 text-brand-charcoal" />
+                  <Mail className="h-4 w-4 text-white" />
                   {SHOWROOM.email}
                 </a>
               </li>
@@ -140,7 +142,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 text-xs text-brand-graphite md:flex-row">
+        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/25 pt-8 text-xs text-white/75 md:flex-row">
           <p>
             &copy; {new Date().getFullYear()} Hymark Furniture. All rights
             reserved.
