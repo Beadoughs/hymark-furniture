@@ -209,7 +209,7 @@ export const SHOWROOM = {
   address: "40 – 56 Lindsay St, Launceston TAS 7250",
   phone: "(03) 6331 7377",
   phoneTel: "+61363317377",
-  email: "simon@hymarkfurniture.com.au",
+  email: "team@hymarkfurniture.com.au",
   hours: [
     { day: "Monday – Friday", time: "9:00am – 5:30pm" },
     { day: "Saturday", time: "9:00am – 4:00pm" },
