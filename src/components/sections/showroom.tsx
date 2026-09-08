@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Clock, MapPin, Navigation } from "lucide-react";
+import { Clock, Navigation } from "lucide-react";
 import { SHOWROOM } from "@/lib/data";
 import { FadeIn } from "@/components/motion/fade-in";
 import { SectionHeading } from "@/components/ui/section-heading";
@@ -58,17 +58,12 @@ export function Showroom() {
             <div className="flex flex-col gap-6">
               <Card>
                 <CardContent className="p-6">
-                  <div className="flex gap-4">
-                    <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-brand-orange" />
-                    <div>
-                      <h3 className="font-semibold text-brand-charcoal">
-                        Address
-                      </h3>
-                      <p className="mt-1 text-sm text-brand-graphite">
-                        {SHOWROOM.address}
-                      </p>
-                    </div>
-                  </div>
+                  <h3 className="font-semibold text-brand-charcoal">
+                    Address
+                  </h3>
+                  <p className="mt-1 text-sm text-brand-graphite">
+                    {SHOWROOM.address}
+                  </p>
                 </CardContent>
               </Card>
 
