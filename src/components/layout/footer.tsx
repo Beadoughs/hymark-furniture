@@ -25,11 +25,11 @@ export function Footer() {
           <div className="lg:col-span-1">
             <Link
               href="/"
-              className="mb-6 inline-flex rounded-sm bg-brand-charcoal px-3 py-2.5"
+              className="mb-6 inline-flex overflow-hidden rounded-md bg-white px-2.5 py-2"
             >
               <span className="relative inline-block h-9 w-[7.75rem] md:h-10 md:w-[8.5rem]">
                 <Image
-                  src="/logo.png"
+                  src="/logo-footer.png"
                   alt="Hymark Furniture"
                   fill
                   sizes="(max-width: 768px) 124px, 136px"
