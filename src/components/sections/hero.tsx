@@ -9,14 +9,14 @@ export function Hero() {
   return (
     <section className="relative flex min-h-[78vh] items-center overflow-hidden md:min-h-[86vh]">
       <Image
-        src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1920&q=85"
-        alt="Luxury Australian living room with premium furniture"
+        src="/images/hero-lounge.jpg"
+        alt="Grayson modular leather lounge in cognac tan"
         fill
         priority
-        className="object-cover"
+        className="object-cover object-center"
         sizes="100vw"
       />
-      <div className="absolute inset-0 bg-brand-charcoal/48" />
+      <div className="absolute inset-0 bg-brand-charcoal/52" />
 
       <div className="site-container relative z-10 py-20 md:py-24">
         <motion.div
