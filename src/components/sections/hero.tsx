@@ -31,12 +31,8 @@ export function Hero() {
           <h1 className="font-serif text-4xl font-medium leading-tight tracking-tight text-white md:text-5xl lg:text-6xl">
             Premium Furniture For Tasmanian Homes
           </h1>
-          <p className="mt-5 max-w-lg text-base leading-relaxed text-white/90 md:text-lg">
-            Discover quality living, dining and lounge collections with trusted
-            local service and delivery across Tasmania.
-          </p>
 
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-7 flex flex-col gap-3 sm:flex-row">
             <Button variant="brand" size="lg" asChild>
               <Link href="/collections">Shop Collections</Link>
             </Button>
