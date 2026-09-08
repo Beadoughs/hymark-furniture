@@ -15,7 +15,7 @@ export function FeaturedCategories() {
           <SectionHeading
             eyebrow="Collections"
             title="Featured Categories"
-            description="Explore our curated ranges — living essentials, dining settings and statement lounges, every piece chosen for quality and lasting style."
+            description="Discover quality living, dining and lounge collections with trusted local service and delivery across Tasmania."
           />
         </FadeIn>
 
