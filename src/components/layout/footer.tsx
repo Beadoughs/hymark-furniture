@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { Facebook, Instagram, Mail, Phone } from "lucide-react";
 import { NAV_LINKS, SHOWROOM } from "@/lib/data";
@@ -23,20 +22,6 @@ export function Footer() {
       <div className="site-container py-14 md:py-16">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div className="lg:col-span-1">
-            <Link
-              href="/"
-              className="mb-6 inline-flex overflow-hidden rounded-md bg-white px-2.5 py-2"
-            >
-              <span className="relative inline-block h-9 w-[7.75rem] md:h-10 md:w-[8.5rem]">
-                <Image
-                  src="/logo-footer.png"
-                  alt="Hymark Furniture"
-                  fill
-                  sizes="(max-width: 768px) 124px, 136px"
-                  className="object-contain object-left"
-                />
-              </span>
-            </Link>
             <p className="max-w-xs text-sm leading-relaxed text-white/85">
               Tasmania&apos;s trusted family-owned furniture destination. Quality
               furniture, competitive prices, and service you can count on.
