@@ -26,7 +26,7 @@ export function Showroom() {
             <div className="grid gap-4 sm:grid-cols-2">
               <div className="relative col-span-2 aspect-[16/10] overflow-hidden rounded-md sm:col-span-1 sm:row-span-2 sm:aspect-auto sm:min-h-[320px]">
                 <Image
-                  src="https://images.unsplash.com/photo-1618221197160-bc32a4bffa15?w=800&q=80"
+                  src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&q=80"
                   alt="Hymark Furniture showroom"
                   fill
                   className="object-cover"
