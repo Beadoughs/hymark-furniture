@@ -11,8 +11,7 @@ export const CATEGORIES = [
     id: "living",
     title: "Living",
     description: "Essentials for everyday Tasmanian homes",
-    image:
-      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80",
+    image: "/images/living-collection.jpg",
     href: "/collections/living",
   },
   {

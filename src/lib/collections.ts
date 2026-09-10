@@ -16,8 +16,7 @@ export const COLLECTIONS: CollectionConfig[] = [
     heroTitle: "Living Collections",
     heroDescription:
       "Living essentials curated for comfort, quality and everyday Tasmanian homes — from recliners to refined workspaces.",
-    heroImage:
-      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1600&q=85",
+    heroImage: "/images/living-collection.jpg",
     categoryFilters: ["Living"],
   },
   {
